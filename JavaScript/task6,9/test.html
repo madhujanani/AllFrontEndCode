@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./test.css">
+    <script src ="./test.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+
+    <title>Userinput_form</title>
+</head>
+<body>
+    <form action="test1.html"  id="form" target="_blank">
+
+    <h1  style="text-align:center">Task/Assignment js-4</h1> 
+    <div id="container">
+        <label for="txtnum1">Name</label>
+        <input type="text" id ="txtnum1" value="Madhu"><br><br>
+    <div>
+        <label for="pob">Designation</label>
+        <select id="pob">
+            <option  value ="Consultant">Consultant</option>
+            <option  value ="Manager">Manager</option>
+            <option value ="Trainer">Trainee</option>
+        </select><br><br>
+    </div>
+        <label for="empid">Emp_ID:</label>
+        <input type="number"id="empid" required maxlength="5" value="435"><br></br>
+
+        <label for="doj">Joining_date:</label>
+        <input type="date"id="doj" required min="1980-12-31" max="2025-12-31"><br></br>
+
+        <label for="hours">Hours_worked :</label>
+        <input type="number"id="hours" max="10000" required><br></br>
+        <input type="submit" value="submit" onclick = "send()"/>
+
+
+    </div>
+</form>
+
+</body>
+</html>
+

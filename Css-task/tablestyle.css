@@ -1,0 +1,55 @@
+/* just tring command lines */
+a{
+
+    text-decoration: none;
+    color: green;
+    font-size: 30px;
+    }
+a:active{
+    background-color: purple;
+}
+p:nth-of-type(2n){
+    text-indent: 50px;
+    letter-spacing: 1px;
+    line-height: 1.8em;
+    background-color: orange;
+    border-radius: 2em 3em;
+}
+h3 {
+    text-shadow: 2vb 0.9vb 0.6vb red;
+    }
+input:focus{
+    background-color: blue;
+}
+.emoji ul{
+    margin:2em 45em;
+    white-space: nowrap;
+    
+}
+
+.emoji ul li:nth-child(n)::before{
+    content: "\1F602";
+}
+hr{
+    border: solid 0.5em greenyellow;
+}
+
+.main{
+    width: 70%;
+    height: 400px;
+    margin: 100px auto;
+    position: relative;
+}
+.main li{
+    display: inline-block; /* to remove radio button*/
+}
+.content{
+    background: orange;
+    color: #fff;
+    position: absolute;/*stick to the tab*/
+    left: o;
+}
+
+
+
+

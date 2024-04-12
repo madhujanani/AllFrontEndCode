@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./jsAssignment.css">
+    <script src ="./userinput_object.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+
+    <title>Userinput_form</title>
+</head>
+<body>
+    <h1  style="text-align:center">Task/Assignment js-4</h1> 
+    <div id="container">
+        
+        <label for="txtnum1">FirstName</label>
+        <input type="text" id ="txtnum1" value="hello">
+
+        <label for="txtnum2">LastName</label>
+        <input type="text" id ="txtnum2" value="world"><br><br>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email">
+
+        <label for="phno">Phone</label>
+        <input type="number" id ="phno" ><br><br>
+        <label for="sum">Age</label>
+        <input type="date" id ="sum" min="1970-12-31" max="2023-12-31"><br><br>
+    <div>
+        <label for="pob">POB</label>
+        <select id="pob" class="pob">
+            <option>India</option>
+            <option selected>USA</option>
+            <option>UK</option>
+            <option>Germany</option>
+            <option>China</option>
+            <option>japan</option>
+        </select><br><br>
+    </div>
+    <div id="gender" class="gender">
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender">
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender">
+        <label for="other">Others</label>
+        <input type="radio" id="other" name="gender">
+    </div><br>
+        <input type="button" value="submit" onclick= "submit()"/>
+    </div>
+    </body>
+</body>
+</html>
+    

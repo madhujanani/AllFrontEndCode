@@ -1,0 +1,26 @@
+button{
+    margin: 0 .20em;
+    padding: 0.4em 1vb;
+    border-radius: 20px 15px;
+    background-color: orange;
+    font-size: large ;
+    
+}
+
+button:hover{
+background-color:palevioletred;
+}
+h1{
+    background-color: bisque;
+    text-transform: uppercase;
+}
+
+.Mul_tabs{
+height: 220px;
+width: 500px;
+background-color:aqua;            
+padding: 25px;
+margin: 0,auto;
+border-radius: 20px;
+
+}

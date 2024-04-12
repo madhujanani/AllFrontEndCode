@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp" focus>
+    <input type="text" id="pass">
+
+    <button onclick="demo()">clickme</button>
+    <script>
+        let arr=[
+            {
+                email:"a@gmail.com",
+                pass:111
+            },
+            {
+                email:"b@gmail.com",
+                pass:222
+            },
+            {
+                email:"c@gmail.com",
+                pass:333
+            },
+            {
+                email:"d@gmail.com",
+                pass:444
+            },
+        ]
+        let demo= async()=>{
+            let inpval=document.getElementById("inp").value;
+            let inppas=document.getElementById("pass").value;
+
+        let myPromise=(email,inppas)=>{
+            return new Promise((resolve,reject)=>{
+                // if((email=="hel@gmail.com")&&(inppas==12345)){
+                //     resolve("sucess")
+                // }
+                // else{
+                //     reject("error")
+                // }
+                let res=arr.find((item)=>item.email==email);
+                if(res!=undefined)
+                {
+                    if(res.pass==inppas){
+                        resolve("successful login")
+                    }
+                    else{
+                        resolve("password doesnot match")
+                    }
+                }
+                else{
+                    reject("invalid login details")
+                }
+            })
+        }
+        // myPromise(inpval,inppas)
+        // .then((suc)=>{
+        //     alert(suc)
+        // })
+        // .catch((err)=>{
+        //     alert(err)
+        // })
+        try {
+                let suc =  await myPromise(inpval,inppas);
+                alert(suc)
+
+        } catch (error) {
+            alert(error)
+        }
+    }
+        
+    </script>    
+</body>
+
+</html>

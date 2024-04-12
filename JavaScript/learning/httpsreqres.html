@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>https request response</title>
+    <style>
+        .box{
+            display:flex;
+            gap: 50px;
+            flex-wrap: wrap;   /* wraping in the page */
+            justify-content: center;
+        }
+        .product{
+            border:2px solid black;
+            box-shadow:50px red;
+            height: fit-content;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <h1>Http request and response</h1>
+    <button onclick="getData()">getData</button>
+    <button onclick="postData()">InsertData</button>
+    <button onclick="updateData()">UpdateData</button>
+    <button onclick="deleteData()">DeleteData</button>
+
+
+    <script>
+
+        const getData=()=>{
+            const box = document.querySelector(".box")  
+            fetch('https://dummyjson.com/products')
+            .then((response)=>{
+                //console.log(response)   //gives the response not the real product list
+                response.json()
+                .then((res)=>{
+                    //console.log(res) //product array +product list
+                    console.log(res.products) //only product list
+                    let products=res.products;
+                    for(product of products){ 
+                    let design=`
+                    <div class="product">
+                    <h2> brand :${product.brand}</h2> 
+                    <p> Title :${product.title}</p> 
+                    <p> Price :${product.price}</p>
+                    <p> discount :${product.discountPercentage}</p> 
+ 
+                    <img src="${product.images[0]}" width="150" alt=""/> 
+                    </div> `;        //there are 5 images in the data ,we can chose any image as we need.i choose 0 index img
+                    box.innerHTML+=design
+                }
+                })
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+        }
+
+        const postData=()=>{
+            fetch('https://dummyjson.com/products/add', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                        title: 'BMW Pencil',
+                        })
+            }) 
+            .then((response)=>{
+                response.json()
+                .then((res)=>{
+                    console.log(res)
+                })
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+        }
+
+        const updateData=()=>{
+            fetch('https://dummyjson.com/products/1', {
+                method: 'PUT', /* or PATCH */
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    title: 'iPhone Galaxy +1'
+                })
+            }) 
+            .then((response)=>{
+                response.json()
+                .then((res)=>{
+                    console.log(res)
+                })
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+        }
+
+        const deleteData=()=>{
+           
+            fetch('https://dummyjson.com/products/1', {
+            method: 'DELETE',
+            }) 
+            .then((response)=>{
+                response.json()
+                .then((res)=>{
+                    console.log(res)
+                })
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+.container{
+    height:800px;
+    width: 500px;
+
+    background-color: rgb(99, 231, 196);
+    display: grid;
+    grid-template-columns:repeat(4,100px);
+    grid-template-rows: 0.1fr 1.0fr  0.3fr 0.1fr;
+    grid-gap: 5px;
+    justify-content:center;
+    text-align: center;
+    margin: auto;
+    padding: 30px 5px;
+    text-transform: uppercase ;
+    font-size: x-large;
+    color: rgb(11, 1, 29);
+    grid-template-areas:"head head head head"
+                        " side art art art"
+                        "side im1 im2 im3"
+                        "foot foot foot foot";
+}
+
+.header{
+    background: rgb(236, 115, 192);
+    grid-area: head;
+}
+.footer{
+    background:rgb(236, 115, 192);
+    grid-area: foot;
+}
+.aside{
+    background: rgb(228, 170, 25);
+    grid-area: side;
+}
+.article{
+    background-color: rgb(214, 28, 28);
+    grid-area: art;
+
+    
+}
+.img1{
+    grid-area: im1;
+    background-color: rgb(44, 165, 178);
+
+}
+.img2{
+    background: rgb(237, 138, 7);
+    grid-area: im2;
+
+}
+
+.img3{
+    background: rgb(146, 100, 73);
+    grid-area: im3;
+
+}
+
+

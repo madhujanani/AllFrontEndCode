@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <input style="height:50px;width:40%" type="text" id ="inputValue"/>
+    <button id="buttonvalue" onclick="demo()"><i class="fa fa-file-sound-o" style="font-size:48px;color:red"></i>
+    </i></button>
+
+    <script>
+        function demo(){
+            let val = document.getElementById("inputValue").value;
+            var texspech=new SpeechSynthesisUtterance(val);
+            speechSynthesis.speak(texspech);
+        }
+    </script>
+</body>
+</html>
